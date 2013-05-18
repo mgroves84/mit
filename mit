@@ -50,37 +50,30 @@
 ###################
 
 usage() {
-  cat <<-ENDOFUSAGE
+  echo   "Most Important Tasks (MIT):"
+  echo "Displays from or adds Most Important Tasks (MIT) to todo.txt file."
+  echo
+  echo "$(basename $0) [-hv] [date|day task] [not @context|@context] [mv ID DATE|DAY]"
+  echo
+  echo    "-h, --help      Displays help message."
+  echo    "-v, --version   Displays version information."
+  echo
+  echo  "mit DATE|DAY task"
+  echo   "DATE must be in the format of YYYY.MM.DD."
+  echo   "DAY can be full or short day names, today o"r tomorrow.
+  echo
+  echo  "mit not @context|@context"
+  echo    "Displays all MITs not in or in specified context."
+  echo
+  echo  "mit mv ID DATE|DAY"
+  echo    "Move the MIT identified by ID to a new day."
+  echo    "DATE must be in the format of YYYY.MM.DD."
+  echo    "DAY can be full or short day names, today or tomorrow."
+  echo
+  echo  "mit wed upload code to github"
+  echo    "Creates a new MIT for next Wednesday unless the current day"
+  echo    "is Wednesday in which case it will be created for today."
 
-	  Most Important Tasks (MIT):
-	    Displays from or adds Most Important Tasks (MIT) to todo.txt file.
-
-	    $(basename $0) [-h|--help] [-v|--version] [date|day task] [rm ID]
-	        [not @context|@context] [mv ID DATE|DAY]
-
-	    -h, --help      Displays help message.
-	    -v, --version   Displays version information.
-
-	    mit DATE|DAY task
-	      DATE must be in the format of YYYY.MM.DD.
-	      DAY can be full or short day names, today or tomorrow.
-
-	    mit rm ID
-	      Convert the MIT identified by ID to a standard task.
-
-	    mit not @context|@context
-	      Displays all MIT's not in or in specified context.
-
-	    mit mv ID DATE|DAY
-	      Move the MIT identified by ID to a new day.
-	      DATE must be in the format of YYYY.MM.DD.
-	      DAY can be full or short day names, today or tomorrow.
-
-	    mit wed upload code to github
-	      Creates a new MIT for next Wednesday unless the current day
-	      is Wednesday in which case it will be created for today.
-
-	ENDOFUSAGE
   exit
 }
 
